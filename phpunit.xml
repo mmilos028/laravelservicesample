@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="true">
+    <testsuites>
+        <testsuite name="Feature Tests">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+
+        <testsuite name="Unit Tests">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="Save Tickets - Cashier">
+            <directory suffix="Test.php">./tests/Unit/save_ticket_by_cashier</directory>
+        </testsuite>
+
+        <testsuite name="Save Shift Tickets - Cashier">
+            <directory suffix="Test.php">./tests/Unit/save_ticket_shift</directory>
+        </testsuite>
+
+        <testsuite name="Save Tickets - Cashier Anonym">
+            <directory suffix="Test.php">./tests/Unit/save_ticket_by_cashier_anonym</directory>
+        </testsuite>
+
+        <testsuite name="Save Tickets - Player">
+            <directory suffix="Test.php">./tests/Unit/save_ticket_by_player</directory>
+        </testsuite>
+
+        <testsuite name="Save Tickets - Terminal">
+            <directory suffix="Test.php">./tests/Unit/save_ticket_by_terminal</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+
+        <env name="WEB_SERVICE_URL" value="http://192.168.3.63/tombola-service/public/api" />
+
+        <!--
+        <env name="WEB_SERVICE_URL" value="http://www.best200.com/tombolaservice/public/api" />
+        -->
+        <env name="APP_ENV" value="local"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+
+
+        <env name="TERMINAL_TYPE_ID" value="21" />
+        <env name="TERMINAL_TEST_USERNAME" value="D4-3D-7E-FD-D1-CB" />
+        <env name="TERMINAL_TEST_PASSWORD" value="D4-3D-7E-FD-D1-CB" />
+
+        <env name="PLAYER_TYPE_ID" value="5" />
+        <env name="PLAYER_TEST_USERNAME" value="testPlayer" />
+        <env name="PLAYER_TEST_PASSWORD" value="testPlayer" />
+
+        <!--
+        <env name="CASHIER_TEST_USER_ID" value="219" />
+        <env name="CASHIER_TEST_USERNAME" value="Cashier2" />
+        <env name="CASHIER_TEST_PASSWORD" value="Cashier2" />
+        <env name="CASHIER_SERVICE_CODE" value="8365" />
+        -->
+
+        <!-- CASHIER TERMINAL -->
+        <env name="CASHIER_TEST_USER_ID" value="285" />
+        <env name="CASHIER_TEST_USERNAME" value="Test12" />
+        <env name="CASHIER_TEST_PASSWORD" value="Test12" />
+        <env name="CASHIER_SERVICE_CODE" value="86309427" />
+
+        <!-- CASHIER TERMINAL -->
+        <env name="CASHIER1_TEST_USER_ID" value="355" />
+        <env name="CASHIER1_TEST_USERNAME" value="Test16" />
+        <env name="CASHIER1_TEST_PASSWORD" value="Test16" />
+        <env name="CASHIER1_SERVICE_CODE" value="871271767" />
+
+        <!-- CASHIER TERMINAL -->
+        <env name="CASHIER2_TEST_USER_ID" value="362" />
+        <env name="CASHIER2_TEST_USERNAME" value="Test6" />
+        <env name="CASHIER2_TEST_PASSWORD" value="Test6" />
+        <env name="CASHIER2_SERVICE_CODE" value="847648468" />
+
+        <!-- CASHIER TERMINAL -->
+        <env name="CASHIER3_TEST_USER_ID" value="69" />
+        <env name="CASHIER3_TEST_USERNAME" value="testappcash" />
+        <env name="CASHIER3_TEST_PASSWORD" value="testappcash" />
+        <env name="CASHIER3_SERVICE_CODE" value="857108149" />
+
+        <!-- CASHIER TERMINAL -->
+        <env name="CASHIER4_TEST_USER_ID" value="65" />
+        <env name="CASHIER4_TEST_USERNAME" value="nisicTerminal" />
+        <env name="CASHIER4_TEST_PASSWORD" value="nisicTerminal" />
+        <env name="CASHIER4_SERVICE_CODE" value="872647625" />
+
+        <!-- CASHIER TERMINAL -->
+        <env name="COLLECTOR_TEST_USER_ID" value="174" />
+        <env name="COLLECTOR_TEST_USERNAME" value="LocColTest" />
+        <env name="COLLECTOR_TEST_PASSWORD" value="LocColTest" />
+
+
+        <!--
+        <env name="COLLECTOR_TEST_USER_ID" value="171" />
+        <env name="COLLECTOR_TEST_USERNAME" value="ClientColTest" />
+        <env name="COLLECTOR_TEST_PASSWORD" value="ClientColTest" />
+        -->
+
+        <!--
+        <env name="TEST_USERNAME" value="plmilos1" />
+        <env name="TEST_PASSWORD" value="plmilos1" />
+        -->
+        <env name="START_DATE" value="01-Jan-2018" />
+        <env name="END_DATE" value="31-Dec-2018" />
+    </php>
+</phpunit>
